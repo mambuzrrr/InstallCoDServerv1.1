@@ -87,7 +87,10 @@ echo ""
 echo "Setup complete. The Call of Duty server is installed and configured in $INSTALL_DIR/myserver."
 
 echo ""
-echo "Now, change the IP to 0.0.0.0 (open to all over the public internet) and port to 28960 in /data/myserver/startmyserver.sh and configure match specific information in /data/myserver/main/myserver.cfg."
+echo "Changing the IP to 0.0.0.0 (open to all over the public internet) and port to 28960 in /data/myserver/startmyserver.sh..."
+
+echo ""
+echo "Change the server configuration by navigating to /data/myserver/main/myserver.cfg"
 
 cat << 'EOF' > startmyserver.sh
 #!/bin/sh
