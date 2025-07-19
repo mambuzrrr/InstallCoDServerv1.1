@@ -14,9 +14,14 @@ if [[ $EUID -ne 0 ]]; then
     echo "Error: This script must be run as root. Use sudo."
     exit 1
 fi
+
+mkdir -p /data
+cd /data
+
 apt update
 # Some of these might fail    
 sudo apt install -y \
+  unzip \
   lib32z1 \
   libc6:i386 \
   libstdc++6:i386 \
@@ -83,3 +88,12 @@ echo "Setup complete. The Call of Duty server is installed and configured in $IN
 
 echo ""
 echo "Now, change the IP to 0.0.0.0 (open to all over the public internet) and port to 28960 in /data/myserver/startmyserver.sh and configure match specific information in /data/myserver/main/myserver.cfg."
+
+cat << 'EOF' > startmyserver.sh
+#!/bin/sh
+exec su -s /bin/sh codserver -- <<-COD
+HOME=/data/myserver
+LD_PRELOAD=/data/myserver/codextended.so /data/myserver/cod_lnxded +set dedicated 2 +set fs_homepath /data/myserver +set fs_basepath /data/myserver +set net_ip 0.0.0.0 +set net_port 28960 +set sv_maxclients 32 +set ttycon 0 +set developer 0 +exec myserver.cfg +map mp_harbor
+COD
+EOF
+
