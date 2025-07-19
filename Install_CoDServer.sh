@@ -14,7 +14,7 @@ if [[ $EUID -ne 0 ]]; then
     echo "Error: This script must be run as root. Use sudo."
     exit 1
 fi
-
+apt install unzip
 echo "Creating user for CodServer..."
 if ! id codserver &>/dev/null; then
     useradd -r -s /usr/sbin/nologin codserver
