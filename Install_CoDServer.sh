@@ -19,9 +19,9 @@ mkdir -p /data
 cd /data
 
 apt update
+apt install unzip
 # Some of these might fail    
 sudo apt install -y \
-  unzip \
   lib32z1 \
   libc6:i386 \
   libstdc++6:i386 \
