@@ -10,3 +10,6 @@ That's all there is to it!
 You can now edit everything necessary and enjoy your own server!
 PS:
 Edit the "`startmyserver.sh`" script, you need to specify your `IP` and `PORT`.
+
+> [IMPORTANT]
+> Edit the ```myserver.cfg``` to your liking.
