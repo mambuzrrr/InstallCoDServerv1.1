@@ -1,4 +1,4 @@
-# CHANGE MADE OVER THE ORIGINAL SCRIPT: /usr/sbin/nologin is used instead of /usr/bin/nologin
+# CHANGE MADE OVER THE ORIGINAL SCRIPT: /usr/sbin/nologin is used instead of /usr/bin/nologin (fix for ubuntu server). Include the installation of a few necessary binaries
 # Ensure that you run this script in /data (i.e. your PWD is /data). If this directory doesn't exist, create it.
 # You can configure the passwords/guns/weapons/game-mode etc in /data/myserver/main/myserver.cfg
 
@@ -14,7 +14,22 @@ if [[ $EUID -ne 0 ]]; then
     echo "Error: This script must be run as root. Use sudo."
     exit 1
 fi
-apt install unzip
+apt update
+sudo apt install -y \
+  libc6:i386 \
+  libstdc++6:i386 \
+  libncurses5:i386 \
+  libz1:i386 \
+  lib32z1 \
+  libx11-6:i386 \
+  libxext6:i386 \
+  libgcc1:i386 \
+  libxau6:i386 \
+  libxdmcp6:i386 \
+  libxcb1:i386 \
+  libuuid1:i386 \
+  libcurl3-gnutls:i386 \
+  libcurl4:i386
 echo "Creating user for CodServer..."
 if ! id codserver &>/dev/null; then
     useradd -r -s /usr/sbin/nologin codserver
