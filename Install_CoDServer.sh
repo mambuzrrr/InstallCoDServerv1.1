@@ -21,7 +21,7 @@ cd /data
 apt update
 apt install unzip
 # Some of these might fail    
-apt install lib32z1 
+apt install -y lib32z1 
 echo "Creating user for CodServer..."
 if ! id codserver &>/dev/null; then
     useradd -r -s /usr/sbin/nologin codserver
@@ -87,5 +87,7 @@ echo "Changing the IP to 0.0.0.0 (open to all over the public internet) and port
 
 echo ""
 echo "Change the server configuration by navigating to /data/myserver/main/myserver.cfg"
+
+echo "Launching the server..."
 
 ./myserver/startmyserver.sh
