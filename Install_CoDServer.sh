@@ -15,7 +15,9 @@ if [[ $EUID -ne 0 ]]; then
     exit 1
 fi
 apt update
+# Some of these might fail    
 sudo apt install -y \
+  lib32z1 \
   libc6:i386 \
   libstdc++6:i386 \
   libncurses5:i386 \
