@@ -1,5 +1,5 @@
 # CHANGE MADE OVER THE ORIGINAL SCRIPT: /usr/sbin/nologin is used instead of /usr/bin/nologin
-# Also, ensure that you run this script in /data (i.e. your PWD is /data). If this directory doesn't exist, create it.
+# Ensure that you run this script in /data (i.e. your PWD is /data). If this directory doesn't exist, create it.
 # You can configure the passwords/guns/weapons/game-mode etc in /data/myserver/main/myserver.cfg
 
 # Installing a fresh Call of Duty 1 1.1 Server with a Script, fastest and Easiest way to Install a CoDServer (1.1).
@@ -17,7 +17,7 @@ fi
 
 echo "Creating user for CodServer..."
 if ! id codserver &>/dev/null; then
-    useradd -r -s /usr/bin/nologin codserver
+    useradd -r -s /usr/sbin/nologin codserver
     echo "User 'codserver' created."
 else
     echo "User 'codserver' already exists. Skipping creation."
@@ -65,4 +65,4 @@ echo ""
 echo "Setup complete. The Call of Duty server is installed and configured in $INSTALL_DIR/myserver."
 
 echo ""
-echo "Now, change the IP to 0.0.0.0 and port to 28960 in /data/myserver/startmyserver.sh and configure match specific information in /data/myserver/main/myserver.cfg."
+echo "Now, change the IP to 0.0.0.0 (open to all over the public internet) and port to 28960 in /data/myserver/startmyserver.sh and configure match specific information in /data/myserver/main/myserver.cfg."
