@@ -1,6 +1,7 @@
 # CHANGE MADE OVER THE ORIGINAL SCRIPT: /usr/sbin/nologin is used instead of /usr/bin/nologin (fix for ubuntu server). Include the installation of a few necessary binaries
 # Ensure that you run this script in /data (i.e. your PWD is /data). If this directory doesn't exist, create it.
 # You can configure the passwords/guns/weapons/game-mode etc in /data/myserver/main/myserver.cfg
+# Don't forget to change the network firewall settings in your online cloud provider's portal.
 
 # Installing a fresh Call of Duty 1 1.1 Server with a Script, fastest and Easiest way to Install a CoDServer (1.1).
 # Scripted by Brejax (www.devlxue.eu)
@@ -72,6 +73,8 @@ COD
 EOF
 rm myserver/startmyserver.sh
 mv startmyserver.sh myserver/
+# THis command might fail if you dont clone the repo into your home dir
+mv ~/InstallCoDServerv1.1/myserver.cfg /data/myserver/main/
 
 
 chown -R codserver:codserver $INSTALL_DIR/myserver
