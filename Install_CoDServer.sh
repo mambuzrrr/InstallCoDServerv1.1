@@ -1,3 +1,7 @@
+# CHANGE MADE OVER THE ORIGINAL SCRIPT: /usr/sbin/nologin is used instead of /usr/bin/nologin
+# Also, ensure that you run this script in /data (i.e. your PWD is /data). If this directory doesn't exist, create it.
+# You can configure the passwords/guns/weapons/game-mode etc in /data/myserver/main/myserver.cfg
+
 # Installing a fresh Call of Duty 1 1.1 Server with a Script, fastest and Easiest way to Install a CoDServer (1.1).
 # Scripted by Brejax (www.devlxue.eu)
 # After Installation, you can configure your things, dont forgot to open the "startmyserver.sh" script, to add your IP & Port.
@@ -59,3 +63,6 @@ chmod u+x $INSTALL_DIR/myserver/cod_lnxded $INSTALL_DIR/myserver/startmyserver.s
 
 echo ""
 echo "Setup complete. The Call of Duty server is installed and configured in $INSTALL_DIR/myserver."
+
+echo ""
+echo "Now, change the IP to 0.0.0.0 and port to 28960 in /data/myserver/startmyserver.sh and configure match specific information in /data/myserver/main/myserver.cfg."
