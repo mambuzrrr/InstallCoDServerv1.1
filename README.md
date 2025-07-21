@@ -10,3 +10,7 @@ That's all there is to it!
 You can now edit everything necessary and enjoy your own server!
 PS:
 Edit the "`startmyserver.sh`" script, you need to specify your `IP` and `PORT`.
+
+> [IMPORTANT]
+> Edit the ```myserver.cfg``` to your liking.
+> Clone the repository into the home directory of your newly created VM instance. Make the script executable and run it. Modify the network firewall settings from the online portal of your VM provider. This should be enough to set up the server.
